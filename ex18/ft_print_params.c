@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 20:20:53 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/04/14 17:36:12 by aarias-d         ###   ########.fr       */
+/*   Created: 2025/04/12 21:15:05 by aarias-d          #+#    #+#             */
+/*   Updated: 2025/04/12 23:34:37 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void	ft_putstr(char *str)
+void	ft_putstr(char *c)
+{
+	while (*c)
+		ft_putchar(*c++);
+	ft_putchar('\n');
+}
+
+int	main(int argc, char **argv)
 {
 	int	i;
 
-	i = 0;
-	while (str[i] != '\0')
+	i = 1;
+	if (argc > 1)
 	{
-		ft_putchar(str[i]);
-		i++;
+		while (i < argc)
+			ft_putstr(argv[i++]);
 	}
+	return (0);
 }

@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 20:20:53 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/04/14 17:36:12 by aarias-d         ###   ########.fr       */
+/*   Created: 2025/04/12 19:46:26 by aarias-d          #+#    #+#             */
+/*   Updated: 2025/04/12 20:37:11 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_putstr(char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (s1[i] != '\0' && s1[i] == s2[i])
 	{
-		ft_putchar(str[i]);
 		i++;
 	}
+	if (s2[i] == '\0')
+		return (0);
+	else if (s1[i] < s2[i])
+		return (-1);
+	else
+		return (1);
 }

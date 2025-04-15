@@ -3,31 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aarias-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 19:04:45 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/04/10 19:25:21 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/04/12 20:31:27 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_sqrt(int nb)
 {
 	int	x;
-	int	y;
 
 	x = 1;
-	y = 2;
 	if (nb < 0)
 		return (0);
-	while (!((x * x) <= nb && y * y >= nb))
+	while ((x * x) <= nb)
 	{
-		y++;
+		if ((x * x) == nb)
+			return (x);
 		x++;
 	}
-	if (y * y ==  nb)
-		return (y);
-	if (x * x == nb)
-		return (x);
-	return(0);
-
+	return (0);
 }

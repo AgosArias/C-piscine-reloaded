@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: aarias-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 20:20:53 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/04/14 17:36:12 by aarias-d         ###   ########.fr       */
+/*   Created: 2025/04/13 05:41:04 by aarias-d          #+#    #+#             */
+/*   Updated: 2025/04/13 06:02:42 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_putstr(char *str)
+int *mayor(char* c)
 {
-	int	i;
+	if (c == 'a')
+		return 1;
+	return 0;
+}
+int ft_count_if(char **tab, int (*f)(char*))
+{
+	int i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while(*tab)
 	{
-		ft_putchar(str[i]);
-		i++;
-	}
+		if (f(*tab++) == 1)
+			i++; 
+	}		
+
+}
+
+int main(int argc, char **argv)
+{
+	ft_count_if(argv, mayor);
+	return(0);
 }
